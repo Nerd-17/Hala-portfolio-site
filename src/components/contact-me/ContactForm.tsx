@@ -92,7 +92,7 @@ export default function ContactForm() {
       await new Promise((resolve) => setTimeout(resolve, 1500));
 
       // Create mailto link as fallback
-      const mailtoLink = `mailto:hala.daoudi@example.com?subject=${encodeURIComponent(
+      const mailtoLink = `mailto: haladaoudi22@gmail.com?subject=${encodeURIComponent(
         formData.subject
       )}&body=${encodeURIComponent(
         `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
