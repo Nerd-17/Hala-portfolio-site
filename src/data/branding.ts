@@ -39,7 +39,7 @@ export const PortfolioBranding: PortfolioBrandingModel = {
     { name: "Testimonials", url: "/testimonials", iconName: "star" },
     { name: "Get In Touch", url: "/contact", iconName: "mail" },
   ],
-  contactEmail: "hala.daoudi@example.com",
+  contactEmail: "haladaoudi22@gmail.com",
 };
         
       
