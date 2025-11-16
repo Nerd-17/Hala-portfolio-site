@@ -8,8 +8,8 @@ export default function ContactInfo() {
       icon: 'Mail',
       title: 'Email',
       description: 'Preferred contact method',
-      value: 'hala.daoudi@example.com',
-      href: 'mailto:hala.daoudi@example.com',
+      value: 'haladaoudi22@gmail.com',
+      href: 'mailto:haladaoudi22@gmail.com',
       type: 'email',
     },
 {
