@@ -1,0 +1,34 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Header from '@/components/common/Header';
+import Footer from '@/components/common/Footer';
+import PageHero from '@/components/common/PageHero';
+import BookDetailContent from '@/components/page-717171/BookDetailContent';
+
+const title = 'Book Details - Hala Daoudi Portfolio';
+const description = 'Explore Hala\'s favorite books with detailed quotes and insights';
+---
+
+<BaseLayout title={title} description={description}>
+  <div className="min-h-screen flex flex-col bg-background">
+    <Header client:load />
+    
+    <main className="flex-1 pt-20 md:pt-24">
+      <PageHero 
+        title="My Favorite Books"
+        subtitle="Discover the literary works that inspire my journey"
+        breadcrumbs={[
+          { name: 'Home', href: './portfolio-home.html' },
+          { name: 'Books', href: './book-gallery.html' },
+          { name: 'Book Details', href: '#' }
+        ]}
+        size="medium"
+      />
+      
+      <BookDetailContent client:load />
+    </main>
+    
+    <Footer client:load variant="detailed" />
+  </div>
+</BaseLayout>

@@ -1,0 +1,135 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Header from '@/components/common/Header';
+import Footer from '@/components/common/Footer';
+import QuoteBackground from '@/components/common/QuoteBackground';
+import { Button } from '@/components/ui/button';
+---
+
+<BaseLayout 
+  title="Page Not Found - Hala Daoudi Portfolio" 
+  description="The page you're looking for doesn't exist. Return to Hala's portfolio."
+>
+  <div class="relative min-h-screen flex flex-col bg-background">
+    {/* Quote Background */}
+    <QuoteBackground client:idle />
+    
+    {/* Header */}
+    <Header client:load variant="transparent" />
+    
+    {/* Main Content */}
+    <main class="flex-1 flex items-center justify-center pt-20 pb-12 px-4 relative z-10">
+      <div class="container mx-auto max-w-2xl">
+        <div class="text-center space-y-8 animate-fade-in">
+          {/* Error Code */}
+          <div class="space-y-4">
+            <div class="text-8xl md:text-9xl font-bold bg-gradient-to-r from-accent via-secondary to-accent bg-clip-text text-transparent">
+              404
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold text-foreground">
+              Page Not Found
+            </h1>
+          </div>
+
+          {/* Error Message */}
+          <div class="space-y-4">
+            <p class="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto">
+              It seems this page has vanished like a spell gone wrong. The page you're looking for doesn't exist in this magical realm.
+            </p>
+            <p class="text-base text-muted-foreground/70 italic">
+              "Not all those who wander are lost, but this page certainly is."
+            </p>
+          </div>
+
+          {/* Decorative Element */}
+          <div class="flex justify-center gap-2 py-8">
+            <div class="w-2 h-2 rounded-full bg-accent animate-float" style="animation-delay: 0s;"></div>
+            <div class="w-2 h-2 rounded-full bg-secondary animate-float" style="animation-delay: 0.5s;"></div>
+            <div class="w-2 h-2 rounded-full bg-accent animate-float" style="animation-delay: 1s;"></div>
+          </div>
+
+          {/* Navigation Buttons */}
+          <div class="flex flex-col sm:flex-row gap-4 justify-center pt-8">
+            <a href="./portfolio-home.html" class="inline-block">
+              <Button 
+                size="lg"
+                class="w-full sm:w-auto bg-gradient-to-r from-accent to-secondary hover:from-accent/90 hover:to-secondary/90 text-background font-semibold"
+              >
+                Back to Portfolio
+              </Button>
+            </a>
+            <a href="./about-me.html" class="inline-block">
+              <Button 
+                size="lg"
+                variant="outline"
+                class="w-full sm:w-auto border-border hover:bg-muted"
+              >
+                About Me
+              </Button>
+            </a>
+          </div>
+
+          {/* Quick Links */}
+          <div class="pt-8 border-t border-border">
+            <p class="text-sm text-muted-foreground mb-6">
+              Or explore these sections:
+            </p>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+              <a 
+                href="./project-gallery.html"
+                class="px-4 py-3 rounded-lg bg-card hover:bg-muted border border-border transition-all duration-200 text-sm font-medium text-muted-foreground hover:text-foreground"
+              >
+                My Projects
+              </a>
+              <a 
+                href="./book-gallery.html"
+                class="px-4 py-3 rounded-lg bg-card hover:bg-muted border border-border transition-all duration-200 text-sm font-medium text-muted-foreground hover:text-foreground"
+              >
+                Favorite Books
+              </a>
+              <a 
+                href="./client-testimonials.html"
+                class="px-4 py-3 rounded-lg bg-card hover:bg-muted border border-border transition-all duration-200 text-sm font-medium text-muted-foreground hover:text-foreground"
+              >
+                Testimonials
+              </a>
+              <a 
+                href="./contact-me.html"
+                class="px-4 py-3 rounded-lg bg-card hover:bg-muted border border-border transition-all duration-200 text-sm font-medium text-muted-foreground hover:text-foreground"
+              >
+                Get In Touch
+              </a>
+              <a 
+                href="./about-me-intro.html"
+                class="px-4 py-3 rounded-lg bg-card hover:bg-muted border border-border transition-all duration-200 text-sm font-medium text-muted-foreground hover:text-foreground"
+              >
+                Bio
+              </a>
+              <a 
+                href="./index.html"
+                class="px-4 py-3 rounded-lg bg-card hover:bg-muted border border-border transition-all duration-200 text-sm font-medium text-muted-foreground hover:text-foreground"
+              >
+                Home
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    {/* Footer */}
+    <Footer client:idle variant="simple" />
+  </div>
+
+  <style>
+    @keyframes shimmer-404 {
+      0% {
+        background-position: -1000px 0;
+      }
+      100% {
+        background-position: 1000px 0;
+      }
+    }
+  </style>
+</BaseLayout>

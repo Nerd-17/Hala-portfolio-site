@@ -1,0 +1,97 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Header from '@/components/common/Header';
+import Footer from '@/components/common/Footer';
+import PageHero from '@/components/common/PageHero';
+import SectionDivider from '@/components/common/SectionDivider';
+import BookGalleryGrid from '@/components/book-gallery/BookGalleryGrid';
+import QuoteBackground from '@/components/common/QuoteBackground';
+
+const breadcrumbs = [
+  { name: 'Home', href: './portfolio-home.html' },
+  { name: 'Favorite Books', href: './book-gallery.html' },
+];
+---
+
+<BaseLayout 
+  title="My Favorite Books | Hala Daoudi Portfolio" 
+  description="Explore Hala Daoudi's favorite books with cherished quotes and literary insights."
+>
+  <div class="relative min-h-screen flex flex-col bg-background">
+    {/* Quote Background */}
+    <QuoteBackground client:load />
+    
+    {/* Main Content */}
+    <div class="relative z-10">
+      {/* Header */}
+      <Header client:load variant="transparent" />
+      
+      {/* Hero Section */}
+      <div class="pt-20 md:pt-24">
+        <PageHero 
+          title="My Favorite Books"
+          subtitle="A collection of literary treasures that have shaped my perspective and inspired my journey as a teacher, administrator, and author."
+          breadcrumbs={breadcrumbs}
+          size="large"
+        />
+      </div>
+
+      {/* Gallery Section */}
+      <section class="relative py-16 md:py-24 bg-gradient-to-b from-background via-card/30 to-background">
+        <div class="container mx-auto px-4">
+          {/* Section Introduction */}
+          <div class="max-w-3xl mx-auto text-center mb-12 md:mb-16">
+            <p class="text-lg text-muted-foreground leading-relaxed">
+              These books have been my companions through different chapters of life. Each one carries a quote that resonates deeply with my values and philosophy. Click on any book to explore more about why it holds a special place in my heart.
+            </p>
+          </div>
+
+          {/* Book Gallery Grid */}
+          <BookGalleryGrid client:load />
+        </div>
+      </section>
+
+      {/* Section Divider */}
+      <SectionDivider variant="full" withIcon={true} iconName="BookOpen" />
+
+      {/* Call to Action Section */}
+      <section class="relative py-16 md:py-20 bg-card border-y border-border">
+        <div class="container mx-auto px-4">
+          <div class="max-w-2xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Inspired by Literature
+            </h2>
+            <p class="text-lg text-muted-foreground mb-8">
+              Literature has been my guide in understanding the human experience. These books remind me that stories have the power to transform, educate, and inspire.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a 
+                href="./project-gallery.html"
+                class="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-300 font-medium"
+              >
+                Explore My Projects
+              </a>
+              <a 
+                href="./about-me.html"
+                class="inline-flex items-center justify-center px-6 py-3 border border-accent text-accent rounded-lg hover:bg-accent/10 transition-all duration-300 font-medium"
+              >
+                Learn More About Me
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <Footer client:load variant="detailed" />
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  /* Page-specific styles for book gallery */
+  :global(body) {
+    background-attachment: fixed;
+  }
+</style>

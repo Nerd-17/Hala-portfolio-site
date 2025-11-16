@@ -1,0 +1,111 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Header from '@/components/common/Header';
+import Footer from '@/components/common/Footer';
+import QuoteBackground from '@/components/common/QuoteBackground';
+import HeroSection from '@/components/portfolio-home/HeroSection';
+import SectionPreview from '@/components/portfolio-home/SectionPreview';
+import SectionDivider from '@/components/common/SectionDivider';
+---
+
+<BaseLayout 
+  title="Hala Daoudi - Teacher, Administrator & Author"
+  description="Professional portfolio of Hala Daoudi showcasing projects, books, and expertise in teaching, administration, and writing."
+>
+  <div class="relative min-h-screen flex flex-col bg-background">
+    {/* Quote Background */}
+    <QuoteBackground client:idle />
+    
+    {/* Header */}
+    <Header client:load variant="transparent" />
+    
+    {/* Main Content */}
+    <main class="flex-1 relative z-10 pt-20">
+      {/* Hero Section */}
+      <HeroSection client:load />
+      
+      {/* Section Divider */}
+      <SectionDivider variant="full" withIcon={true} iconName="Sparkles" />
+      
+      {/* About Me Preview */}
+      <SectionPreview 
+        client:idle
+        sectionId="about"
+        title="About Me"
+        description="Discover my journey as a Teacher, Administrator, and Author"
+        href="./about-me-intro.html"
+        icon="User"
+        accentColor="from-accent"
+      />
+      
+      {/* Section Divider */}
+      <SectionDivider variant="full" withIcon={true} iconName="BookOpen" />
+      
+      {/* My Projects Preview */}
+      <SectionPreview 
+        client:idle
+        sectionId="projects"
+        title="My Projects"
+        description="Explore my professional projects and creative works"
+        href="./project-gallery.html"
+        icon="FolderOpen"
+        accentColor="from-secondary"
+      />
+      
+      {/* Section Divider */}
+      <SectionDivider variant="full" withIcon={true} iconName="Sparkles" />
+      
+      {/* Favorite Books Preview */}
+      <SectionPreview 
+        client:idle
+        sectionId="books"
+        title="Favorite Books"
+        description="Explore the books that inspire and influence my work"
+        href="./book-gallery.html"
+        icon="BookMarked"
+        accentColor="from-accent"
+      />
+      
+      {/* Section Divider */}
+      <SectionDivider variant="full" withIcon={true} iconName="Star" />
+      
+      {/* Testimonials Preview */}
+      <SectionPreview 
+        client:idle
+        sectionId="testimonials"
+        title="Client Testimonials"
+        description="See what others have to say about working with me"
+        href="./client-testimonials.html"
+        icon="MessageSquare"
+        accentColor="from-secondary"
+      />
+      
+      {/* Section Divider */}
+      <SectionDivider variant="full" withIcon={true} iconName="Sparkles" />
+      
+      {/* Get In Touch Preview */}
+      <SectionPreview 
+        client:idle
+        sectionId="contact"
+        title="Get In Touch"
+        description="Let's connect and discuss opportunities"
+        href="./contact-me.html"
+        icon="Mail"
+        accentColor="from-accent"
+      />
+      
+      {/* Final Divider */}
+      <SectionDivider variant="full" withIcon={true} iconName="Wand2" />
+    </main>
+    
+    {/* Footer */}
+    <Footer client:idle variant="detailed" />
+  </div>
+</BaseLayout>
+
+<style>
+  :global(body) {
+    overflow-x: hidden;
+  }
+</style>

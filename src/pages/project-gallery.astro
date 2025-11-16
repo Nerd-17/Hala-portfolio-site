@@ -1,0 +1,46 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Header from '@/components/common/Header';
+import Footer from '@/components/common/Footer';
+import PageHero from '@/components/common/PageHero';
+import QuoteBackground from '@/components/common/QuoteBackground';
+import ProjectGalleryPage from '@/components/project-gallery/ProjectGalleryPage';
+---
+
+<BaseLayout 
+  title="My Projects - Hala Daoudi Portfolio"
+  description="Explore Hala Daoudi's professional projects in education, administration, and authorship."
+>
+  <div class="relative min-h-screen bg-background text-foreground">
+    {/* Quote Background */}
+    <QuoteBackground client:load />
+    
+    {/* Main Content */}
+    <div class="relative z-10">
+      {/* Header */}
+      <Header client:load variant="transparent" />
+      
+      {/* Hero Section */}
+      <div class="pt-20">
+        <PageHero 
+          title="My Projects"
+          subtitle="Explore my professional work across education, administration, and authorship. Each project represents dedication, innovation, and impact."
+          breadcrumbs={[
+            { name: 'Home', href: './portfolio-home.html' },
+            { name: 'My Projects', href: './project-gallery.html' }
+          ]}
+          size="medium"
+        />
+      </div>
+
+      {/* Gallery Section */}
+      <main class="relative z-10">
+        <ProjectGalleryPage client:load />
+      </main>
+
+      {/* Footer */}
+      <Footer client:load variant="detailed" />
+    </div>
+  </div>
+</BaseLayout>

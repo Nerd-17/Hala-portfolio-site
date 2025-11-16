@@ -1,0 +1,42 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Header from '@/components/common/Header';
+import Footer from '@/components/common/Footer';
+import QuoteBackground from '@/components/common/QuoteBackground';
+import PageHero from '@/components/common/PageHero';
+import ClientTestimonialsPage from '@/components/client-testimonials/ClientTestimonialsPage';
+
+const title = 'Client Testimonials | Hala Daoudi Portfolio';
+const description = 'Read testimonials from past clients and collaborators about Hala Daoudi\'s work as a teacher, administrator, and author.';
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="relative min-h-screen flex flex-col bg-background">
+    {/* Quote Background */}
+    <QuoteBackground client:idle />
+
+    {/* Header */}
+    <Header client:load variant="transparent" />
+
+    {/* Main Content */}
+    <main class="flex-1 relative z-10 pt-20">
+      {/* Hero Section */}
+      <PageHero 
+        title="Client Testimonials"
+        subtitle="Discover what past clients and collaborators have to say about my work in education, administration, and literature."
+        breadcrumbs={[
+          { name: 'Home', href: './portfolio-home.html' },
+          { name: 'Testimonials', href: './client-testimonials.html' }
+        ]}
+        size="medium"
+      />
+
+      {/* Testimonials Grid */}
+      <ClientTestimonialsPage client:load />
+    </main>
+
+    {/* Footer */}
+    <Footer client:idle variant="detailed" />
+  </div>
+</BaseLayout>

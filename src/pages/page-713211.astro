@@ -1,0 +1,22 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Header from '@/components/common/Header';
+import Footer from '@/components/common/Footer';
+import NotFoundPage from '@/components/page-713211/NotFoundPage';
+---
+
+<BaseLayout 
+  title="Page Not Found - Hala Daoudi Portfolio"
+  description="The page you're looking for could not be found. Return to the portfolio homepage."
+>
+  <div class="min-h-screen flex flex-col bg-background text-foreground">
+    <Header variant="transparent" />
+    
+    <main class="flex-1 pt-20 md:pt-24">
+      <NotFoundPage client:load />
+    </main>
+    
+    <Footer variant="simple" />
+  </div>
+</BaseLayout>

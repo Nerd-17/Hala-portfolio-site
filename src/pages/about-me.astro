@@ -1,0 +1,50 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Header from '@/components/common/Header';
+import Footer from '@/components/common/Footer';
+import PageHero from '@/components/common/PageHero';
+import QuoteBackground from '@/components/common/QuoteBackground';
+import ProfileSection from '@/components/about-me/ProfileSection';
+import RolesGrid from '@/components/about-me/RolesGrid';
+import CallToActionSection from '@/components/about-me/CallToActionSection';
+import SectionDivider from '@/components/common/SectionDivider';
+---
+
+<BaseLayout title="About Me - Hala Portfolio" description="Learn about Hala's professional background as a Teacher, Administrator, and Author.">
+  <div class="min-h-screen flex flex-col bg-background">
+    {/* Quote Background */}
+    <QuoteBackground client:idle />
+    <Header />
+    
+    <main class="flex-1 pt-20">
+      {/* Page Hero */}
+      <PageHero 
+        title="About Me"
+        subtitle="Discover my journey as an educator, administrator, and author"
+        breadcrumbs={[
+          { name: 'Home', href: './portfolio-home.html' },
+          { name: 'About Me', href: './about-me.html' }
+        ]}
+        size="medium"
+      />
+
+      {/* Profile Section */}
+      <ProfileSection client:load />
+
+      {/* Section Divider */}
+      <SectionDivider variant="full" withIcon={true} iconName="BookOpen" />
+
+      {/* Roles Grid */}
+      <RolesGrid client:load />
+
+      {/* Section Divider */}
+      <SectionDivider variant="full" withIcon={true} iconName="Sparkles" />
+
+      {/* Call to Action Section */}
+      <CallToActionSection client:load />
+    </main>
+
+    <Footer variant="detailed" />
+  </div>
+</BaseLayout>

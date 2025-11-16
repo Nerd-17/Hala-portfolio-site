@@ -1,0 +1,26 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Header from '@/components/common/Header';
+import Footer from '@/components/common/Footer';
+import ProjectDetailPageComponent from '@/components/project-detail/ProjectDetailPage';
+import { PortfolioProjects } from '@/data/projects';
+---
+
+<BaseLayout 
+  title="Project Details - Hala Daoudi Portfolio"
+  description="Detailed view of all portfolio projects"
+>
+  <div className="min-h-screen flex flex-col bg-background">
+    <Header client:load variant="transparent" />
+    
+    <main className="flex-1 pt-20 md:pt-24">
+      <ProjectDetailPageComponent 
+        client:load
+        projects={PortfolioProjects}
+      />
+    </main>
+
+    <Footer client:load variant="simple" />
+  </div>
+</BaseLayout>

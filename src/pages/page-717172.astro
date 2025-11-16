@@ -1,0 +1,41 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Header from '@/components/common/Header';
+import Footer from '@/components/common/Footer';
+import PageHero from '@/components/common/PageHero';
+import BookDetailContent from '@/components/book-detail/BookDetailContent';
+import { PortfolioBooks } from '@/data/books';
+
+// Get book ID from query parameter, default to first book
+const bookId = Astro.url.searchParams.get('id') || 'b1';
+const book = PortfolioBooks.find(b => b.id === bookId) || PortfolioBooks[0];
+
+const breadcrumbs = [
+  { name: 'Home', href: './portfolio-home.html' },
+  { name: 'Favorite Books', href: './book-gallery.html' },
+  { name: book.title, href: '#' },
+];
+---
+
+<BaseLayout 
+  title={`${book.title} - Hala Daoudi Portfolio`}
+  description={`Explore ${book.title} by ${book.author} - one of Hala's favorite books with her favorite quote and insights.`}
+>
+  <div class="min-h-screen flex flex-col bg-background">
+    <Header variant="transparent" />
+    
+    <main class="flex-1 pt-20">
+      <PageHero 
+        title={book.title}
+        subtitle={`by ${book.author}`}
+        breadcrumbs={breadcrumbs}
+        size="medium"
+      />
+      
+      <BookDetailContent client:load book={book} />
+    </main>
+    
+    <Footer variant="detailed" />
+  </div>
+</BaseLayout>

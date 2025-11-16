@@ -1,0 +1,23 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Header from '@/components/common/Header';
+import Footer from '@/components/common/Footer';
+import QuoteBackground from '@/components/common/QuoteBackground';
+import AboutMeIntroHero from '@/components/about-me-intro/AboutMeIntroHero';
+import ProfessionalRolesSection from '@/components/about-me-intro/ProfessionalRolesSection';
+import CallToActionSection from '@/components/about-me-intro/CallToActionSection';
+---
+
+<BaseLayout title="About Me Introduction - Hala Daoudi Portfolio" description="Meet Hala Daoudi - Teacher, Administrator, and Author. Discover her professional background and passion for education and literature.">
+  <div class="relative min-h-screen flex flex-col bg-background">
+    <QuoteBackground client:load />
+    <Header client:load variant="transparent" />
+    <main class="flex-1 relative z-10 pt-20">
+      <AboutMeIntroHero client:load />
+      <ProfessionalRolesSection client:load />
+      <CallToActionSection client:load />
+    </main>
+    <Footer client:idle variant="simple" />
+  </div>
+</BaseLayout>
