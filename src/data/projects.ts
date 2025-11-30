@@ -66,7 +66,7 @@ title: "The Poetic Canon",
     ],
     images: [
       { url: "/images/poetry-cover.png", alt: "Novel cover art mockup" },
-      { url: "/images/poetry-1.png", alt: "Writing process setup" },
+      { url: "/images/14.png", alt: "Writing process setup" },
       { url: "/images/poetry-2.png", alt: "Inspirational setting for the novel" },
     ],
   },
